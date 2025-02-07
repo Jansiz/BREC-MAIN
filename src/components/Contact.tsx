@@ -24,7 +24,7 @@ export function Contact() {
               <h3 className="mt-6 text-base font-semibold leading-7 text-foreground">Get in Touch</h3>
               <p className="mt-2 text-sm sm:text-base text-muted-foreground">
                 Phone: (705) 716-9705<br />
-                Email: info@brec.com  
+                Email: boakes@dominionlending.ca
               </p>
             </div>
   
