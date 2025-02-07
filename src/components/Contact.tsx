@@ -5,7 +5,7 @@ export function Contact() {
       <section id="contact" className="bg-background py-12 sm:py-16 md:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="mx-auto max-w-2xl text-center lg:text-left lg:mx-0">
+          <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-foreground lg:text-4xl">Contact Us</h2>
             <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 sm:leading-8 text-muted-foreground">
               Connect with Barrie Real Estate Collective. Whether you're interested in joining our network, attending our events, or learning more about our services, we're here to help.
@@ -13,23 +13,7 @@ export function Contact() {
           </div>
   
           {/* Contact Cards */}
-          <div className="mx-auto mt-12 sm:mt-16 grid max-w-xl grid-cols-1 gap-6 sm:gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            {/* Office Location */}
-            <div className="flex flex-col rounded-2xl bg-background border border-primary/10 p-6 sm:p-8 shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                <svg className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                </svg>
-              </div>
-              <h3 className="mt-6 text-base font-semibold leading-7 text-foreground">Visit Our Office</h3>
-              <p className="mt-2 text-sm sm:text-base text-muted-foreground">
-                123 Main Street<br />
-                Barrie, Ontario L4N 1A1<br />
-                Canada
-              </p>
-            </div>
-  
+          <div className="mx-auto mt-12 sm:mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2">
             {/* Contact Information */}
             <div className="flex flex-col rounded-2xl bg-background border border-primary/10 p-6 sm:p-8 shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
@@ -39,9 +23,8 @@ export function Contact() {
               </div>
               <h3 className="mt-6 text-base font-semibold leading-7 text-foreground">Get in Touch</h3>
               <p className="mt-2 text-sm sm:text-base text-muted-foreground">
-                Phone: (705) 555-0123<br />
-                Email: info@brec.com<br />
-                Hours: Mon-Fri 9AM-6PM
+                Phone: (705) 716-9705<br />
+                Email: info@brec.com  
               </p>
             </div>
   

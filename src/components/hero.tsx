@@ -3,6 +3,14 @@
 import { Header } from './Header'
 
 export function Hero() {
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    const element = document.querySelector(href)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <div className="bg-background">
       <Header />
@@ -23,7 +31,11 @@ export function Hero() {
                 <div className="hidden sm:mb-10 sm:flex">
                   <div className="relative rounded-full px-3 py-1 text-sm/6 text-muted-foreground ring-1 ring-primary/10 hover:ring-primary/20">
                     Elevating Real Estate in Barrie{' '}
-                    <a href="#" className="whitespace-nowrap font-semibold text-primary">
+                    <a 
+                      href="#team" 
+                      onClick={(e) => handleScroll(e, '#team')}
+                      className="whitespace-nowrap font-semibold text-primary"
+                    >
                       <span aria-hidden="true" className="absolute inset-0" />
                       Join our collective <span aria-hidden="true">&rarr;</span>
                     </a>
@@ -35,15 +47,28 @@ export function Hero() {
                 <p className="mt-8 text-pretty text-lg font-medium text-muted-foreground sm:text-xl/8">
                   A distinguished collective of real estate professionals dedicated to elevating industry standards and delivering exceptional value to the Barrie community. Together, we're redefining the real estate experience.
                 </p>
+                <blockquote className="mt-8 border-l-2 border-primary/30 pl-6">
+                  <p className="text-pretty text-base italic text-muted-foreground sm:text-lg/8">
+                    "The more hands you shake, the more money you'll make. If you're not talking to strangers, you'll never learn anything new."
+                  </p>
+                  <footer className="mt-2 text-sm font-medium text-primary">
+                    — Dan Martell
+                  </footer>
+                </blockquote>
                 <div className="mt-10 flex items-center gap-x-6">
                   <a
-                    href="#"
+                    href="#about"
+                    onClick={(e) => handleScroll(e, '#about')}
                     className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-primary to-accent px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:scale-95"
                   >
                     <span className="relative z-10">About Us</span>
                     <div className="absolute inset-0 -z-10 bg-gradient-to-r from-accent to-primary opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100" />
                   </a>
-                  <a href="#" className="text-sm/6 font-semibold text-foreground group">
+                  <a 
+                    href="#team" 
+                    onClick={(e) => handleScroll(e, '#team')}
+                    className="text-sm/6 font-semibold text-foreground group"
+                  >
                     Meet Our Team{' '}
                     <span aria-hidden="true" className="inline-block transition-transform group-hover:translate-x-1">
                       →

@@ -1,5 +1,7 @@
 "use client"
 
+import Image from 'next/image'
+
 const navigation = {
   main: [
     { name: 'About', href: '#about' },
@@ -49,9 +51,20 @@ export function Footer() {
   return (
     <footer className="bg-background">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-12 sm:py-16 lg:px-8">
-        <nav className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
+        <div className="flex justify-center mb-12">
+          <div className="relative h-32 w-32 sm:h-40 sm:w-40">
+            <Image
+              src="/logo.png"
+              alt="BREC"
+              width={160}
+              height={160}
+              className="h-full w-full object-contain"
+            />
+          </div>
+        </div>
+        <nav className="grid grid-cols-2 gap-4 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
           {navigation.main.map((item) => (
-            <div key={item.name} className="pb-6">
+            <div key={item.name} className="flex justify-center">
               <a
                 href={item.href}
                 onClick={(e) => handleScroll(e, item.href)}
@@ -72,6 +85,17 @@ export function Footer() {
         </div>
         <p className="mt-10 text-center text-xs leading-5 text-muted-foreground">
           &copy; {new Date().getFullYear()} Barrie Real Estate Collective. All rights reserved.
+        </p>
+        <p className="mt-4 text-center text-xs leading-5 text-muted-foreground">
+          Powered by{' '}
+          <a 
+            href="https://www.socialelevate.ca" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-primary hover:text-primary/80 transition-colors"
+          >
+            SocialElevate
+          </a>
         </p>
       </div>
     </footer>

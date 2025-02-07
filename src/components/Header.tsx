@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import Image from 'next/image'
 
 const navigation = [
   { name: 'About', href: '#about' },
@@ -26,19 +27,22 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background/80 to-background/40 backdrop-blur-md"></div>
-      <div className="mx-auto max-w-7xl border-b border-primary/10">
-        <div className="px-6 py-5">
-          <nav className="flex items-center justify-between">
-            <a href="#" onClick={(e) => handleScroll(e, '#')} className="group flex items-center gap-3">
-              <div className="relative h-9 w-9 overflow-hidden rounded-lg bg-gradient-to-br from-primary to-accent shadow-inner transition duration-300 ease-out group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary/25">
-                <img
+      <div className="border-b border-primary/10">
+        <div className="mx-auto max-w-7xl">
+          <nav className="flex items-center justify-between px-4 py-2">
+            <a href="#" onClick={(e) => handleScroll(e, '#')} className="group flex items-center gap-4">
+              <div className="relative h-28 w-28 sm:h-24 sm:w-24 overflow-hidden transition duration-300 ease-out group-hover:scale-105">
+                <Image
+                  src="/logo-header.png"
                   alt="BREC"
-                  src="https://tailwindui.com/plus/img/logos/mark.svg?color=white"
-                  className="h-full w-full object-cover p-2"
+                  width={100}
+                  height={100}
+                  className="h-full w-full object-contain"
+                  priority
                 />
               </div>
-              <span className="text-lg font-medium tracking-tight text-foreground">
-                BREC
+              <span className="text-sm sm:text-lg font-medium tracking-tight text-foreground">
+                Barrie Real Estate Collective
               </span>
             </a>
             
@@ -76,16 +80,19 @@ export function Header() {
         </div>
       </div>
 
-      <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-        <div className="fixed inset-0 z-50 bg-black/20 backdrop-blur-sm transition-opacity" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background/90 backdrop-blur-xl px-6 py-6 shadow-2xl transition-transform sm:max-w-sm">
+      <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+        <div className="fixed inset-0 z-50" />
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-primary/10">
           <div className="flex items-center justify-between">
-            <a href="#" onClick={(e) => handleScroll(e, '#')} className="group flex items-center gap-3">
-              <div className="relative h-9 w-9 overflow-hidden rounded-lg bg-gradient-to-br from-primary to-accent shadow-inner transition duration-300 ease-out group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary/25">
-                <img
+            <a href="#" onClick={(e) => handleScroll(e, '#')} className="group flex items-center gap-4">
+              <div className="relative h-20 w-20 overflow-hidden transition duration-300 ease-out group-hover:scale-105">
+                <Image
+                  src="/logo-header.png"
                   alt="BREC"
-                  src="https://tailwindui.com/plus/img/logos/mark.svg?color=white"
-                  className="h-full w-full object-cover p-2"
+                  width={80}
+                  height={80}
+                  className="h-full w-full object-contain"
+                  priority
                 />
               </div>
               <span className="text-lg font-medium tracking-tight text-foreground">
@@ -101,9 +108,9 @@ export function Header() {
               <XMarkIcon className="h-6 w-6" />
             </button>
           </div>
-          <div className="mt-8 flow-root">
+          <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-border">
-              <div className="space-y-1.5 py-6">
+              <div className="space-y-2 py-6">
                 {navigation.map((item) => (
                   <a
                     key={item.name}
