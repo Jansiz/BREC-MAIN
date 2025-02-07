@@ -6,7 +6,7 @@ const events = [
     type: 'Summit',
     location: 'Liars • Barrie, Ontario',
     imageUrl: '/event_1.jpg',
-    link: 'https://barrie-realestate-collective.vercel.app/',
+    link: 'https://ai-summit-by-brec.vercel.app/',
   },
 ]
 
